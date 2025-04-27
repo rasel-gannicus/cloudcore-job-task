@@ -58,7 +58,7 @@ export default function OrderForm({ productId, productPrice, onClose, onSuccess 
             };
 
             const response = await axios.post(
-                'https://admin.refabry.com/api/public/order/create',
+                `${process.env.NEXT_PUBLIC_API_POST_URL}/public/order/create`,
                 orderPayload,
                 {
                     headers: {
