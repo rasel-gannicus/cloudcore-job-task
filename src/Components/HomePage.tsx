@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from './ProductCard';
+import ProductCard from './Products/ProductCard';
 import { Product } from '@/types/product';
 
 const HomePage = () => {
