@@ -12,8 +12,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         ? product.price - Number(product.discount_amount)
         : product.price;
 
-    console.log(product.stock);
-
     return (
         <Link href={`/products/${product.unique_id}`} className='h-full'>
             <div className=" rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 bg-gray-100 pt-5 px-5 h-full lg:px-5 z-40">

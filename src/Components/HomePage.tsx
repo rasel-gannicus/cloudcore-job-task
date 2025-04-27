@@ -13,7 +13,6 @@ const HomePage = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('https://admin.refabry.com/api/all/product/get');
-        console.log(response);
         setProducts(response.data.data.data);
       } catch (err) {
         setError('Failed to fetch products');

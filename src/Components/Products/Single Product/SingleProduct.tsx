@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { Product } from '@/types/product';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-
-// Add to imports
 import OrderForm from '../OrderForm/OrderForm';
 
 export default function SingleProduct() {
@@ -14,7 +12,6 @@ export default function SingleProduct() {
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    // Add these two state variables
     const [showOrderForm, setShowOrderForm] = useState(false);
     const [orderSuccess, setOrderSuccess] = useState(false);
 
@@ -25,8 +22,6 @@ export default function SingleProduct() {
                 const foundProduct = response.data.data.data.find(
                     (p: Product) => p.unique_id === params.id
                 );
-                console.log('Found Product:', foundProduct); // Add this for debugging
-                console.log('Params ID:', params.id); // Add this for debugging
                 if (foundProduct) {
                     setProduct(foundProduct);
                 } else {
