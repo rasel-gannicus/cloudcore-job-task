@@ -6,11 +6,17 @@ import { Product } from '@/types/product';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
+// Add to imports
+import OrderForm from '../OrderForm/OrderForm';
+
 export default function SingleProduct() {
     const params = useParams();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    // Add these two state variables
+    const [showOrderForm, setShowOrderForm] = useState(false);
+    const [orderSuccess, setOrderSuccess] = useState(false);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -125,9 +131,32 @@ export default function SingleProduct() {
                         )}
                     </div>
 
-                    <button className="mt-8 w-full md:w-auto bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors">
-                        Add to Cart
-                    </button>
+                    
+                    <div className="mt-8">
+                        {!showOrderForm ? (
+                            <button 
+                                onClick={() => setShowOrderForm(true)}
+                                className="w-full md:w-auto bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors"
+                            >
+                                Place Order
+                            </button>
+                        ) : (
+                            <OrderForm 
+                                productId={product.id}
+                                productPrice={discountedPrice}
+                                onClose={() => setShowOrderForm(false)}
+                                onSuccess={() => {
+                                    setOrderSuccess(true);
+                                    setShowOrderForm(false);
+                                }}
+                            />
+                        )}
+                        {orderSuccess && (
+                            <div className="mt-4 p-4 bg-green-100 text-green-700 rounded">
+                                Order placed successfully! We will contact you shortly.
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
