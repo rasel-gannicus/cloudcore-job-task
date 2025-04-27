@@ -62,13 +62,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden transition-all duration-300 ease-in-out transform ${
+        className={`md:hidden transition-all duration-300 ease-in-out transform z-50 ${
           isOpen 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 -translate-y-2 pointer-events-none'
         } absolute top-16 left-0 w-full bg-white shadow-lg`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 z-50">
           <Link 
             href="/" 
             className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
