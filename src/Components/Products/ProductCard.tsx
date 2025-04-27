@@ -25,11 +25,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     />
                     <div className="flex justify-between mt-5">
                         {product.buying_price && (
-                            <div className=" bg-gray-600 text-white px-2 py-1 rounded-md text-sm">
+                            <div className=" bg-gray-600 text-white px-1 py-1 rounded-md text-xs">
                                 Save ৳ {product.discount_amount}
                             </div>
                         )}
-                        <div className=" bg-yellow-500 text-white px-2 py-1 rounded-md text-sm z-50">
+                        <div className=" bg-yellow-500 text-white px-1 py-1 rounded-md text-xs z-50">
                             Stock: {product.stock} left
                         </div>
                     </div>
