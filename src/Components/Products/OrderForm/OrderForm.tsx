@@ -57,8 +57,6 @@ export default function OrderForm({ productId, productPrice, onClose, onSuccess 
                 delivery_charge: "80"
             };
 
-
-
             const response = await axios.post(
                 'https://admin.refabry.com/api/public/order/create',
                 orderPayload,
@@ -70,15 +68,14 @@ export default function OrderForm({ productId, productPrice, onClose, onSuccess 
                 }
             );
 
-            // console.log('Response:', response.data); // For debugging
 
-            if (response.data.success) {
+            if (response.data.message === 'Order placed Successfully!') {
                 onSuccess();
             } else {
-                setError('Failed to place order. Please try again.');
+                setError(response.data.message || 'Failed to place order. Please try again.');
             }
         } catch (err: any) {
-            // console.error('Order error:', err.response?.data || err); // For debugging
+            console.error('Order error:', err.response?.data || err);
             setError(err.response?.data?.message || 'Failed to place order. Please try again.');
         } finally {
             setLoading(false);
