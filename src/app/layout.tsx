@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/Components/Shared/Navbar";
+import ReduxProvider from "@/Redux/ReduxProvider";
 
 export const metadata: Metadata = {
   title: "Cloud Core",
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
+        <ReduxProvider>
+          <Navbar />
+          <main>{children}</main>
+        </ReduxProvider>
       </body>
     </html>
   );

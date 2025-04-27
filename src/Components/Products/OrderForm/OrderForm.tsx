@@ -115,14 +115,14 @@ export default function OrderForm({ productId, productPrice, onClose, onSuccess 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
+                            className="bg-blue-600 cursor-pointer text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors disabled:opacity-50"
                         >
                             {loading ? 'Placing Order...' : 'Confirm Order'}
                         </button>
                         <button
                             type="button"
                             onClick={onClose}
-                            className="bg-gray-200 text-gray-800 px-6 py-2 rounded hover:bg-gray-300 transition-colors"
+                            className="bg-gray-200 cursor-pointer text-gray-800 px-6 py-2 rounded hover:bg-gray-300 transition-colors"
                         >
                             Cancel
                         </button>
