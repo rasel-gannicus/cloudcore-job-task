@@ -111,7 +111,7 @@ export default function OrderForm({ productId, productPrice, onClose, onSuccess 
                     onChange={(e) => setFormData({...formData, address: e.target.value})}
                 />
                 <div className="flex justify-between items-center">
-                    <div className="space-x-2">
+                    <div className="space-x-2 space-y-2">
                         <button
                             type="submit"
                             disabled={loading}
