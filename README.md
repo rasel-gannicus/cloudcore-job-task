@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Cloud Core Product Showcase
 
-First, run the development server:
+A modern Next.js application for showcasing and ordering products with a seamless user experience.
 
+## 🚀 Features
+
+- Detailed product views with images
+- Real-time order processing
+- Responsive design for all devices
+- Server-side rendering for optimal performance
+- Redux state management for orders
+
+## 🛠️ Technologies
+
+- **Framework:** Next.js 14
+- **State Management:** Redux Toolkit
+- **Styling:** Tailwind CSS
+- **HTTP Client:** Axios
+- **Type Checking:** TypeScript
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone <https://github.com/rasel-gannicus/cloudcore-job-task.git>
+ ```
+
+
+2. Install dependencies:
+```bash
+npm install
+ ```
+
+3. Create a .env file in the root directory:
+```env
+NEXT_PUBLIC_API_URL=https://admin.refabry.com/api
+ ```
+
+4. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Environment Variables
+The following environment variables are required:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- NEXT_PUBLIC_API_URL : Base URL for the API
+## 📁 Project Structure
+```plaintext
+src/
+├── app/                  # Next.js app directory
+├── components/          # React components
+├── redux/              # Redux store and slices
+├── types/              # TypeScript definitions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ ```
 
-## Learn More
+## 🚗 API Routes
+- GET /api/all/product/get : Fetch all products
+- POST /api/public/order/create : Create new order
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Usage
+1. Browse products on the home page
+2. Click on a product to view details
+3. Use the order form to place an order
+4. View order confirmation
+## 🤝 Contributing
+1. Fork the repository
+2. Create your feature branch ( git checkout -b feature/amazing-feature )
+3. Commit your changes ( git commit -m 'Add some amazing feature' )
+4. Push to the branch ( git push origin feature/amazing-feature )
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
